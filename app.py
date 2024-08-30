@@ -7,9 +7,6 @@ from database import load_records_from_db
 app = Flask(__name__)
 
 
-
-
-
 @app.route('/')
 def hello():
     return render_template('page1.html')
