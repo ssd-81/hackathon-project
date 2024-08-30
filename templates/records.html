@@ -14,15 +14,15 @@
                 <tr>
                     <th>ID</th>
                     <th>Name</th>
-                    <th>Email</th>
+                    <th>Service</th> <!-- Changed from Email to Service -->
                 </tr>
             </thead>
             <tbody>
-                {% for user in users %}
+                {% for patient in records %}
                 <tr>
-                    <td>{{ user.id }}</td>
-                    <td>{{ user.name }}</td>
-                    <td>{{ user.email }}</td>
+                    <td>{{ patient.p_id }}</td>
+                    <td>{{ patient.p_name }}</td>
+                    <td>{{ patient.service }}</td>
                 </tr>
                 {% endfor %}
             </tbody>

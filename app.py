@@ -1,22 +1,18 @@
 from flask import Flask, render_template , jsonify 
+import sqlalchemy
 from flask import url_for
-from database import engine
-from sqlalchemy import text
+from database import load_records_from_db
+
 
 app = Flask(__name__)
 
 
-def load_records_from_db():
-    with engine.connect() as conn:
-        result = conn.execute(text("select * from p"))
-        result_all = result.all()
-        result_dicts = []
-        for row in result_all:
-            result_dicts.append(dict(dict(row._mapping)))
+
+
 
 @app.route('/')
 def hello():
-    return render_template('login.html')
+    return render_template('page1.html')
 
 
 @app.route('/entry')
@@ -27,6 +23,10 @@ def enter_record():
 def return_record():
     records = load_records_from_db()
     return render_template('records.html', records=records)
+
+@app.route('/home')
+def home():
+    return render_template('back.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
