@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    background: url('c:\Users\sraj9\Downloads\222.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    box-sizing: border-box;
+  }
+  
+  .container {
+    width: 90%;
+    max-width: 600px;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgb(6, 6, 6);
+  }
+  
+  .add-btn {
+    background-color: #28a745;
+    color: rgb(255, 255, 255);
+    padding: 10px 20px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%;
+  }
+  
+  .add-btn:hover {
+    background-color: #218838;
+  }
+  
+  .list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ffffff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+  
+  .list-item .serial, .list-item .name {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+  }
+  
+  .list-item .update-btn {
+    color: #28a745;
+    cursor: pointer;
+    font-size: 16px;
+    margin-right: 10px;
+  }
+  
+  .list-item .delete-btn {
+    color: #dc3545;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .update-btn:hover {
+    text-decoration: underline;
+  }
+  
+  .delete-btn:hover {
+    text-decoration: underline;
+  }
+  
+  @media (max-width: 480px) {
+    .list-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .list-item .serial, .list-item .name, .list-item .update-btn, .list-item .delete-btn {
+        margin-bottom: 5px;
+        font-size: 14px;
+    }
+    
+    .update-btn, .delete-btn {
+        margin-right: 0;
+    }
+    
+    .add-btn {
+        font-size: 16px;
+    }
+  }
