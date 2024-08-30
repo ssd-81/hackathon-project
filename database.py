@@ -1,4 +1,4 @@
-from sqlalchemy import create_engine, text
+from sqlalchemy import create_engine
 
 
 db_connection_string = "mysql+pymysql://2euWq46C4YeBhJn.root:zk61D1ljDOqCSyJb@gateway01.ap-southeast-1.prod.aws.tidbcloud.com/host?charset=utf8mb4"
@@ -12,6 +12,5 @@ engine = create_engine(
     }
 )
 
-with engine.connect() as conn:
-    result = conn.execute(text("select * from p"))
-    print(result.all())
+
+
