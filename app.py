@@ -42,25 +42,26 @@ def enter_record():
 @app.route('/records', methods=['POST'])
 def add_record():
     # Get form data
-    name = request.form['name']
+    patient_name = request.form['name']
     address = request.form['address']
     contact = request.form['contact']
+    service = request.form['service']
 
     # Insert data into the MySQL database
     session = get_db_connection()
     
     # Creating a new record
     new_record = {
-        'name': name,
+        'name': patient_name,
         'address': address,
         'contact': contact,
-        'service':service
+        'service':service,
     }
 
     # Using SQLAlchemy to insert the record
     try:
         session.execute(
-            "INSERT INTO patient (patient_name, phone) VALUES (:name, :address, :contact)",
+            text("INSERT INTO patient (patient_name, address, phone, service) VALUES (:patient_name, :address, :phone, :service)"),
             new_record
         )
         session.commit()

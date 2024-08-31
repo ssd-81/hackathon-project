@@ -12,17 +12,20 @@
         <table class="table table-striped mt-3">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Name</th>
-                    <th>Service</th> <!-- Changed from Email to Service -->
+                    <th>patient_name</th>
+                    <th>address</th>
+                    <th>phone</th> <!-- Changed from Email to Service -->
+                    <th>service</th> 
+
                 </tr>
             </thead>
             <tbody>
                 {% for patient in records %}
                 <tr>
-                    <td>{{ patient.patient_id }}</td>
                     <td>{{ patient.patient_name }}</td>
-                    <td>{{ patient.patient_address }}</td>
+                    <td>{{ patient.address }}</td>
+                    <td>{{ patient.phone }}</td>
+                    <td>{{ patient.service }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
