@@ -38,8 +38,9 @@ def login():
 
         # Query to check if the user exists
         # conn.execute('SELECT * FROM users WHERE username = %s AND password = %s', (username, password))
-        conn.execute(text('SELECT * FROM users WHERE username = :username AND password = :password'), {'username': username, 'password': password})
-        user = conn.fetchone()
+        data = conn.execute(text('SELECT * FROM users WHERE username = :username AND password = :password'), {'username': username, 'password': password})
+        # user = conn.fetchone()
+        user = data.all()
 
         conn.close()
 
