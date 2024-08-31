@@ -4,7 +4,67 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Stylish Form</title>
-    <link rel="stylesheet" href="styles3.css">
+    <style>
+        body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family: Arial, sans-serif;
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('C:\Users\sraj9\Downloads\4444.jpg') no-repeat center center/cover;
+}
+
+form {
+  background-color: rgba(255, 255, 255, 0.625);
+  padding: 38px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(25, 24, 24, 0.09);
+}
+
+.input-group {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  color: #000000;
+}
+
+input[type="text"], input[type="Email"], textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #e0e0e0;
+  border-radius: 5px;
+}
+textarea {
+  height: 100px;
+  resize: none;
+}
+  button[type="submit"] {
+    background-color: #00ff3c;
+    color: rgb(255, 227, 227);
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"]:hover {
+    background-color: #00ff37;
+}
+    </style>
 </head>
 <body>
     <div class="form-container">
