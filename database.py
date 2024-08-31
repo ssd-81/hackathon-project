@@ -14,7 +14,7 @@ engine = create_engine(
     }
 )
 def get_db_connection():
-    return engine.conn()
+    return engine.connect()
 
 def load_records_from_db():
     with engine.connect() as conn:

@@ -1,6 +1,7 @@
 from flask import Flask, render_template , jsonify, url_for,request, redirect, session
 from database import load_records_from_db, get_db_connection
-import mysql.connector
+from sqlalchemy import text
+import mysql.connector, pymysql
 
 
 
@@ -32,13 +33,14 @@ def login():
 
         # Connect to the database
         conn = get_db_connection()
-        cursor = conn.cursor(dictionary=True)
+        # print(conn)
+        # conn = conn.conn(dictionary=True)
 
         # Query to check if the user exists
-        cursor.execute('SELECT * FROM users WHERE username = %s AND password = %s', (username, password))
-        user = cursor.fetchone()
+        # conn.execute('SELECT * FROM users WHERE username = %s AND password = %s', (username, password))
+        conn.execute(text('SELECT * FROM users WHERE username = :username AND password = :password'), {'username': username, 'password': password})
+        user = conn.fetchone()
 
-        cursor.close()
         conn.close()
 
         if user:
