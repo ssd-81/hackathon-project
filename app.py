@@ -25,7 +25,7 @@ def return_record():
 # @app.route('/login')
 # def home():
 #     return render_template('page1.html')
-@app.route('/login', methods=['GET']))
+@app.route('/login', methods=['GET'])
 def show_login_form():
     return render_template('login.html')
 
