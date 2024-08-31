@@ -28,32 +28,6 @@ def show_login_form():
     return render_template('login.html')
 
 
-# @app.route('/login', methods=['POST'])
-# def login():
-#     if request.method == 'POST':
-#         username = request.form['username']
-#         password = request.form['password']
-
-#         # Connect to the database
-#         conn = get_db_connection()
-#         # print(conn)
-#         # conn = conn.conn(dictionary=True)
-
-#         # Query to check if the user exists
-#         # conn.execute('SELECT * FROM users WHERE username = %s AND password = %s', (username, password))
-#         data = conn.execute(text('SELECT * FROM users WHERE username = :username AND password = :password'), {'username': username, 'password': password})
-#         # user = conn.fetchone()
-#         user = data.all()
-
-#         conn.close()
-
-#         if user:
-#             session['user_id'] = user['id']  # Store user ID in session
-#             return redirect(url_for('dashboard'))  # Redirect to a dashboard or home page
-#         else:
-#             return "Invalid username or password", 401  # Return an error message
-#     return render_template('page1.html')  # Render the login page
-
 @app.route('/login', methods=['GET', 'POST'])
 def login():
     if request.method == 'POST':
