@@ -54,7 +54,7 @@
 
     <div class="form-container">
         <h2>Patient Information</h2>
-        <form action="/records">
+        <form action="/records" method="post">
             <label for="name">Patient Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -63,6 +63,9 @@
 
             <label for="contact">Contact Number:</label>
             <input type="tel" id="contact" name="contact" required pattern="[0-9]{10}" placeholder="10-digit number">
+
+            <label for="service">Service:</label>
+            <input type="text" id="service" name="service" placeholder="what service do you want?">
 
             <button type="submit">Submit</button>
         </form>

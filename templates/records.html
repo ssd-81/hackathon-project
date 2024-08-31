@@ -20,9 +20,9 @@
             <tbody>
                 {% for patient in records %}
                 <tr>
-                    <td>{{ patient.p_id }}</td>
-                    <td>{{ patient.p_name }}</td>
-                    <td>{{ patient.service }}</td>
+                    <td>{{ patient.patient_id }}</td>
+                    <td>{{ patient.patient_name }}</td>
+                    <td>{{ patient.patient_address }}</td>
                 </tr>
                 {% endfor %}
             </tbody>
