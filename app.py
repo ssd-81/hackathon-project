@@ -1,7 +1,7 @@
 from flask import Flask, render_template , jsonify, url_for,request, redirect, session
 from database import load_records_from_db, get_db_connection
 from sqlalchemy import text
-import mysql.connector, pymysql
+import  pymysql
 
 
 
